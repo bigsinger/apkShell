@@ -9,7 +9,7 @@
 
 为了简化流程，外壳代码基本上是固定的，不需要在加固阶段反编译后修改再回编译，实际上也并没有对`dex`进行加密和压缩，如果实际使用可以自行拓展代码。外壳通过以下方式读取宿主的原始`Application`的类名：
 
-1. `AndroidManifest.xml`的`meta-data`配置，例如：
+1. `AndroidManifest.xml`的`meta-data`配置：
 
    ```xml
    <meta-data
@@ -42,7 +42,7 @@
 
 1. 从`ShellTester.apk`里提取出`classes.dex`，加固处理为`encrypted_dex.dex`。
 2. 从`Shell.apk`里把`classes.dex`提取出来，塞到`ShellTester.apk`里。
-3. 使用`axml`修改工具（例如：[xml2axml: encode xml to axml AND decode axml to xml--Hack Android Manifest easily](https://github.com/hzw1199/xml2axml)）把`ShellTester.apk`的`AndroidManifest.xml`的`Application`修改为外壳的`Application`（这里是：`com.bigsing.shellapp.ShellApp`）,修改后记得塞回`apk`文件里。
+3. 使用`axml`修改工具（例如：[xml2axml: encode xml to axml AND decode axml to xml--Hack Android Manifest easily](https://github.com/hzw1199/xml2axml)）把`ShellTester.apk`的`AndroidManifest.xml`的`Application`修改为外壳的`Application`（这里是：`com.bigsing.shellapp.ShellApp`），修改后记得塞回`apk`文件里。并参考前文配置`meta-data`告知原始Application类名。
 4. 对`ShellTester.apk`签名，安装运行。
 
 
