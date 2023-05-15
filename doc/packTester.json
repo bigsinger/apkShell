@@ -1,0 +1,9 @@
+{
+  "Name": "加壳DEMO测试",
+  "Desc": "仅供学习参考",
+  "Attention": "注意：请签名！",
+  "Author": "刘看山",
+  "InputFilePath": "./ShellTester.apk",
+  "OutputFilePath": "./ShellTester_packed.apk",
+  "shellClassesDexPath": "./shell_classes.dex"
+}
